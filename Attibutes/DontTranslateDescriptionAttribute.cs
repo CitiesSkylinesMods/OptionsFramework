@@ -6,8 +6,8 @@ namespace OptionsFramework.Attibutes
     [AttributeUsage(AttributeTargets.All)]
     public class DontTranslateDescriptionAttribute : DescriptionAttribute
     {
-        public DontTranslateDescriptionAttribute(string description) :
-            base(description)
+        public DontTranslateDescriptionAttribute(string description)
+            : base(description)
         {
             
         }

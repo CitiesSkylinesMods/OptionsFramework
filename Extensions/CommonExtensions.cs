@@ -9,7 +9,7 @@ namespace OptionsFramework.Extensions
         {
             var fi = value.GetType().GetProperty(propertyName);
             var attributes =
-                (AbstractOptionsAttribute[]) fi.GetCustomAttributes(typeof(AbstractOptionsAttribute), false);
+                (AbstractOptionsAttribute[])fi.GetCustomAttributes(typeof(AbstractOptionsAttribute), false);
 			if (attributes.Length <= 0) {
 				throw new Exception($"Property {propertyName} wasn't annotated with AbstractOptionsAttribute");
 			}
@@ -20,7 +20,7 @@ namespace OptionsFramework.Extensions
         {
             var fi = value.GetType().GetProperty(propertyName);
             var attributes =
-                (AbstractOptionsAttribute[]) fi.GetCustomAttributes(typeof(AbstractOptionsAttribute), false);
+                (AbstractOptionsAttribute[])fi.GetCustomAttributes(typeof(AbstractOptionsAttribute), false);
 			if (attributes.Length <= 0) {
 				throw new Exception($"Property {propertyName} wasn't annotated with AbstractOptionsAttribute");
 			}
