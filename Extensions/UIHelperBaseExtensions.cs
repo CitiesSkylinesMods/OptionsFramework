@@ -146,7 +146,7 @@ namespace OptionsFramework.Extensions
 
         private static UIButton AddButton<T>(this UIHelperBase group, string text, ButtonAttribute attr)
         {
-            return (UIButton)group.AddButton(text, ()=> 
+            return (UIButton)group.AddButton(text, () =>
                 {
                     attr.Action().Invoke();
                 });
@@ -220,7 +220,7 @@ namespace OptionsFramework.Extensions
                 finalValue = (float)value;
             } else if (value is byte)
             {
-                finalValue = (byte) value;
+                finalValue = (byte)value;
             }
             else if (value is int)
             {

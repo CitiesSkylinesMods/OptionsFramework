@@ -19,10 +19,10 @@ namespace OptionsFramework.Attibutes
             var type = Util.FindType(ItemsClass);
             var enumValues = Enum.GetValues(type);
             return (from object enumValue in enumValues
-                let code = (int) enumValue
+                let code = (int)enumValue
                 let memInfo = type.GetMember(Enum.GetName(type, enumValue))
                 let attributes = memInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false)
-                let description = ((DescriptionAttribute) attributes[0]).Description
+                let description = ((DescriptionAttribute)attributes[0]).Description
                 let translatedDesctiption = translator == null ? description : translator.Invoke(description)
                 select new KeyValuePair<string, int>(translatedDesctiption, code)).ToList();
         }

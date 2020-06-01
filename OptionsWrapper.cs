@@ -85,7 +85,7 @@ namespace OptionsFramework
             var xmlSerializer = new XmlSerializer(typeof(T));
             using (var streamReader = new StreamReader(fileName))
             {
-                var options = (T) xmlSerializer.Deserialize(streamReader);
+                var options = (T)xmlSerializer.Deserialize(streamReader);
                 foreach (var propertyInfo in typeof(T).GetProperties())
                 {
                     if (!propertyInfo.CanWrite)
@@ -118,7 +118,7 @@ namespace OptionsFramework
         {
             var type = _instance.GetType();
             var attrs = type.GetCustomAttributes(typeof(OptionsAttribute), false);
-            var fileName = Path.Combine(DataLocation.localApplicationData, ((OptionsAttribute) attrs[0]).FileName);
+            var fileName = Path.Combine(DataLocation.localApplicationData, ((OptionsAttribute)attrs[0]).FileName);
             if (!fileName.EndsWith(".xml"))
             {
                 fileName = fileName + ".xml";
