@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
@@ -135,7 +135,9 @@ namespace OptionsFramework.Extensions
         private static UICheckBox AddCheckbox<T>(this UIHelperBase group, string text, string propertyName, CheckboxAttribute attr)
         {
             var property = typeof(T).GetProperty(propertyName);
-            return (UICheckBox)group.AddCheckbox(text, (bool)property.GetValue(OptionsWrapper<T>.Options, null),
+            return (UICheckBox)group.AddCheckbox(
+                text,
+                (bool)property.GetValue(OptionsWrapper<T>.Options, null),
                 b =>
                 {
                     property.SetValue(OptionsWrapper<T>.Options, b, null);
@@ -167,7 +169,10 @@ namespace OptionsFramework.Extensions
         {
             var property = typeof(T).GetProperty(propertyName);
             var initialValue = Convert.ToString(property.GetValue(OptionsWrapper<T>.Options, null));
-            return (UITextField)group.AddTextfield(text, initialValue, s => { },
+            return (UITextField)group.AddTextfield(
+                text,
+                initialValue,
+                s => {},
                 s =>
                 {
                     object value;
@@ -231,7 +236,12 @@ namespace OptionsFramework.Extensions
                 throw new Exception("Unsupported numeric type for slider!");
             }
 
-            var slider = (UISlider)group.AddSlider(text, attr.Min, attr.Max, attr.Step, Mathf.Clamp(finalValue, attr.Min, attr.Max),
+            var slider = (UISlider)group.AddSlider(
+                text,
+                attr.Min,
+                attr.Max,
+                attr.Step,
+                Mathf.Clamp(finalValue, attr.Min, attr.Max),
                 f =>
                 {
                     if (value is float)

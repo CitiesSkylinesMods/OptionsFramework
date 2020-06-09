@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -8,8 +8,17 @@ namespace OptionsFramework.Attibutes
     [AttributeUsage(AttributeTargets.Property)]
     public class DropDownAttribute : AbstractOptionsAttribute
     {
-        public DropDownAttribute(string description, string itemsClass, string group = null, string actionClass = null,
-            string actionMethod = null) : base(description, group, actionClass, actionMethod)
+        public DropDownAttribute(
+            string description,
+            string itemsClass,
+            string group = null,
+            string actionClass = null,
+            string actionMethod = null)
+            : base(
+                description,
+                group,
+                actionClass,
+                actionMethod)
         {
             ItemsClass = itemsClass;
         }
