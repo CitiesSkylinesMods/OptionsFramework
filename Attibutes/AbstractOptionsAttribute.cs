@@ -54,7 +54,5 @@ namespace OptionsFramework.Attibutes
         private string ActionClass { get; }
 
         private string ActionMethod { get; }
-
-
     }
 }

@@ -6,9 +6,7 @@ namespace OptionsFramework.Attibutes
     public class ButtonAttribute : AbstractOptionsAttribute
     {
         public ButtonAttribute(string description, string group, string actionClass = null, string actionMethod = null)
-            : base(description, group, actionClass, actionMethod)
-        {
-
+            : base(description, group, actionClass, actionMethod) {
         }
     }
 }
