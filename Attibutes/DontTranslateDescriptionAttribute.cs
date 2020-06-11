@@ -7,9 +7,7 @@ namespace OptionsFramework.Attibutes
     public class DontTranslateDescriptionAttribute : DescriptionAttribute
     {
         public DontTranslateDescriptionAttribute(string description)
-            : base(description)
-        {
-            
+            : base(description) {
         }
     }
 }
