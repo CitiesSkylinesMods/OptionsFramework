@@ -17,17 +17,15 @@ namespace OptionsFramework.Extensions
         public static IEnumerable<UIComponent> AddOptionsGroup<T>(this UIHelperBase helper, Func<string, string> translator = null)
         {
             var result = new List<UIComponent>();
-            var properties = from property in typeof(T).GetProperties().Where(p =>
-            {
+            var properties = typeof(T).GetProperties().Where(p => {
                 var attributes =
                     (AbstractOptionsAttribute[])p.GetCustomAttributes(typeof(AbstractOptionsAttribute), false);
                 return attributes.Any();
-            }).Where(p =>
-            {
+            }).Where(p => {
                 var attributes =
                     (HideConditionAttribute[])p.GetCustomAttributes(typeof(HideConditionAttribute), false);
                 return !attributes.Any(a => a.IsHidden());
-            }) select property.Name;
+            }).Select(p => p.Name);
             var groups = new Dictionary<string, UIHelperBase>();
             foreach (var propertyName in properties.ToArray())
             {

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
@@ -76,7 +76,7 @@ namespace OptionsFramework
             }
             catch (FileNotFoundException)
             {
-                SaveOptions();// No options file yet
+                SaveOptions(); // No options file yet
             }
         }
 
