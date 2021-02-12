@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Reflection;
 
 namespace OptionsFramework.Attibutes
@@ -54,7 +54,5 @@ namespace OptionsFramework.Attibutes
         private string ActionClass { get; }
 
         private string ActionMethod { get; }
-
-
     }
 }
